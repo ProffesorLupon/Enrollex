@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Enrollment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, h1, label, input, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .top-bar {
+            background-color: #3201FE;
+            color: white;
+            padding: 12px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        .back-button {
+            width: 100%;
+            padding: 12px;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #3201FE;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2705B3;
+        }
+
+        .back-button {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <div class="top-bar">Search Enrollment</div>
+        <form action="SearchEnrollmentServlet" method="post">
+            <label for="studentId">Enter Student ID Number:</label>
+            <input type="text" id="studentId" name="studentId" pattern="\d+" required
+                   title="Please enter numbers only (e.g. 0311987481)">
+            <input type="submit" value="Search">
+        </form>
+        <a href="adminDashboard.html" class="back-button">Back</a>
+    </div>
+</body>
+</html>

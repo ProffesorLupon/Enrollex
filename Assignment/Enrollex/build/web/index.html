@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrollex Login Page</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body, h1, p, input, a {
+        body, h1, input, label, button {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -21,12 +21,26 @@
             height: 100vh;
         }
 
+        .page-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .top-bar {
+            background-color: #3201FE;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 18px;
+        }
+
         .login-container {
             background-color: #fff;
             padding: 30px;
-            border-radius: 8px;
+            border-radius: 0 0 8px 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
             text-align: center;
         }
 
@@ -35,66 +49,42 @@
             color: #333;
         }
 
-        .login-container input[type="text"], .login-container input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 16px;
+        .role-selection {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            gap: 10px;
         }
 
-        .login-container input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #3201FE;
-            border: none;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 16px;
+        .role-button {
+            padding: 10px 20px;
+            border: 2px solid #3201FE;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .login-container input[type="submit"]:hover {
-            background-color: #2705B3;
-        }
-
-        .login-container .forgot-password, .login-container .create-account {
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        .login-container a {
             color: #3201FE;
+            background-color: white;
+            transition: background-color 0.3s, color 0.3s;
             text-decoration: none;
+            font-size: 16px;
         }
 
-        .login-container a:hover {
-            text-decoration: underline;
+        .role-button:hover {
+            background-color: #3201FE;
+            color: white;
         }
     </style>
 </head>
 <body>
+    <div class="page-container">
+        <div class="top-bar">Welcome to Enrollex</div>
 
-    <div class="login-container">
-        <h1>Login</h1>
-        
-        <form action="loginServlet" method="post">
-            <input type="text" name="username" placeholder="Enter your username" required>
-            
-            <input type="password" name="password" placeholder="Enter your password" required>
-            
-            <input type="submit" value="Login">
-        </form>
-
-        <div class="forgot-password">
-            <a href="forgotPassword.jsp">Forgot Password?</a>
-        </div>
-        <div class="create-account">
-            <a href="createAccount.jsp">Create a new account</a>
+        <div class="login-container">
+            <h1>Login</h1>
+            <div class="role-selection">
+                <a href="studentDashboard.html" class="role-button">Student</a>
+                <a href="adminDashboard.html" class="role-button">Admin</a>
+            </div>
         </div>
     </div>
-
 </body>
 </html>

@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enrollex Login Page</title>
+    <title>Student Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
-        body, h1, input, label, button {
+        body, h2, a {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -31,12 +30,11 @@
             color: white;
             padding: 10px;
             text-align: center;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+            border-radius: 8px 8px 0 0;
             font-size: 18px;
         }
 
-        .login-container {
+        .dashboard-container {
             background-color: #fff;
             padding: 30px;
             border-radius: 0 0 8px 8px;
@@ -44,45 +42,43 @@
             text-align: center;
         }
 
-        .login-container h1 {
+        .dashboard-container h1 {
             margin-bottom: 20px;
             color: #333;
         }
 
-        .role-selection {
+        .link-buttons {
             display: flex;
             justify-content: center;
-            margin-bottom: 15px;
-            gap: 10px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .role-button {
-            padding: 10px 20px;
-            border: 2px solid #3201FE;
-            border-radius: 5px;
-            cursor: pointer;
-            color: #3201FE;
-            background-color: white;
-            transition: background-color 0.3s, color 0.3s;
+        .link-buttons a {
             text-decoration: none;
-            font-size: 16px;
-        }
-
-        .role-button:hover {
             background-color: #3201FE;
             color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .link-buttons a:hover {
+            background-color: #2705B3;
         }
     </style>
 </head>
 <body>
     <div class="page-container">
-        <div class="top-bar">Welcome to Enrollex</div>
+        <div class="top-bar">Student Dashboard</div>
 
-        <div class="login-container">
-            <h1>Login</h1>
-            <div class="role-selection">
-                <a href="studentDashboard.html" class="role-button">Student</a>
-                <a href="adminDashboard.html" class="role-button">Admin</a>
+        <div class="dashboard-container">
+            <h2>What would you like to do?</h2>
+            <div class="link-buttons">
+                <a href="EnrollPage.html">Enroll</a>
+                <a href="EditEnrollment.html">Edit Enrollment</a>
             </div>
         </div>
     </div>

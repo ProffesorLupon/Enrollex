@@ -5,7 +5,7 @@
     <title>Edit Enrollment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body, h1, label, input {
+        body, h1, label, input,a {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -77,9 +77,29 @@
             margin-top: 15px;
             transition: background-color 0.3s;
         }
+        
+        .back-button {
+            width: 100%;
+            padding: 12px;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
 
         input[type="submit"]:hover {
             background-color: #2705B3;
+        }
+        
+        .back-button {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
         }
     </style>
 </head>
@@ -96,6 +116,9 @@
                 </div>
                 <input type="submit" value="Continue">
             </form>
+            
+            <a href="studentDashboard.html" class="back-button">Back</a>
+            
         </div>
     </div>
 </body>

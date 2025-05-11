@@ -5,7 +5,7 @@
     <title>Enrollment Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body, h1, label, input, select {
+        body, h1, label, input, select, a {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -78,8 +78,28 @@
             transition: background-color 0.3s;
         }
 
+        .back-button {
+            width: 100%;
+            padding: 12px;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
         input[type="submit"]:hover {
             background-color: #2705B3;
+        }
+
+        .back-button {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
         }
     </style>
 </head>
@@ -121,6 +141,27 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="10" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">Birth Date</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+
+                <div class="form-group">
                     <label for="qualification">Qualification of Choice</label>
                     <select id="qualification" name="qualification" required>
                         <option value="">-- Select Qualification --</option>
@@ -134,6 +175,8 @@
 
                 <input type="submit" value="Submit Enrollment">
             </form>
+
+            <a href="studentDashboard.html" class="back-button">Back</a>
         </div>
     </div>
 </body>

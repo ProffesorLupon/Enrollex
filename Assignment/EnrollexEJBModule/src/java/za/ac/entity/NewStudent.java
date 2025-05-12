@@ -47,10 +47,26 @@ public class NewStudent implements Serializable {
     @Column(name = "BIRTH_DATE")
     private Date dob;
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "NAME")
+    @Column(name = "CREATION_DATE")
     private Date creationDate;
 
     public NewStudent() {
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public void setGender(Character gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getName() {

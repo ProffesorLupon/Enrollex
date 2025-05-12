@@ -29,8 +29,10 @@ public interface NewStudentFacadeLocal {
 
     int count();
     
-    List<NewStudent> ViewByCourse();
+    List<NewStudent> ViewByCourse(String course);
+
     
-    List<NewStudent> ViewByGender();
+    List<NewStudent> ViewByGender(Character gender);
+
     
 }

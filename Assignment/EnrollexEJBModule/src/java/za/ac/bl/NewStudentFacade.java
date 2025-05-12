@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package za.ac.bl;
 
 import jakarta.ejb.Stateless;
@@ -10,10 +6,6 @@ import jakarta.persistence.PersistenceContext;
 import java.util.List;
 import za.ac.entity.NewStudent;
 
-/**
- *
- * @author shots
- */
 @Stateless
 public class NewStudentFacade extends AbstractFacade<NewStudent> implements NewStudentFacadeLocal {
 
@@ -30,15 +22,17 @@ public class NewStudentFacade extends AbstractFacade<NewStudent> implements NewS
     }
 
     @Override
-    public List<NewStudent> ViewByCourse() {
-        return null;
+    public List<NewStudent> ViewByCourse(String course) {
+        return em.createQuery("SELECT s FROM NewStudent s WHERE s.qualification = :course", NewStudent.class)
+             .setParameter("course", course)
+             .getResultList();
     }
 
+
     @Override
-    public List<NewStudent> ViewByGender() {
-        return null;
+    public List<NewStudent> ViewByGender(Character gender) {
+        return em.createQuery("SELECT s FROM NewStudent s WHERE s.gender = :gender", NewStudent.class)
+             .setParameter("gender", gender)
+             .getResultList();
     }
-    
-    
-    
 }
